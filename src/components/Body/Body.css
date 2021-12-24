@@ -1,0 +1,8 @@
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #b3e0f5;
+}
