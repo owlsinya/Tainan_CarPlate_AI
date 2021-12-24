@@ -1,3 +1,15 @@
+## 下載後請先在資料夾的終端安裝
+## `npm install`
+## `npm install react-router-dom@6`
+## `npm install react-to-print@latest`
+## `npm install react-bootstrap@latest` 
+
+完成後啟動 
+
+## `npm start`
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
