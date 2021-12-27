@@ -5,8 +5,7 @@ import Header from "./components/Header/Header.js"
 import Body from "./components/Body/Body.js"
 import Search from './components/Search/Search.js';
 
-
-export function App() {
+function App() {
     return (
         <Router>
             <nav>
@@ -17,10 +16,8 @@ export function App() {
                 <Route path="/body" element={<Body />} />
                 <Route path="/search" element={<Search />} />
             </Routes>
-
-
             <hr></hr>
-            <div>此處為 Footer</div>
+
         </Router>
     )
 

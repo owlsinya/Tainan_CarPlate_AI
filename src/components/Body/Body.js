@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import './Body.css'
+import Excel from '../Excel/Excel';
 
 
 export default class Body extends Component {
 	render() {
 		return (
 			<div>
+				<h2>查詢結果</h2>
 				<table id="tblExport" border="1">
 					<tbody>
 						<tr><td>案號</td><td>1</td></tr>
@@ -19,7 +21,8 @@ export default class Body extends Component {
 						</tr>
 					</tbody>
 				</table>
-
+				<hr></hr>
+				<Excel />
 			</div>
 		)
 	}

@@ -10,7 +10,7 @@ export default function PrintComponent() {
       <div >
         {/* 要列印的component(Body 並先將其不顯示出來) , 如果有多個component要印可以再用一個component包起來*/}
         <div style={{ display: "none" }}>
-        <Body ref={(el) => (componentRef = el)}/>
+          <Body ref={(el) => (componentRef = el)} />
         </div>
 
         {/* 可用超連結 <a href="" 觸發trigger  ,  這邊用<button> */}
