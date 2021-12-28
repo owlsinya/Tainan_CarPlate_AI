@@ -4,8 +4,7 @@
 
 import React from 'react'
 import './BodyTable.css'
-import { useNavigate } from "react-router-dom";
-import Printer from '../Printer/Printer';
+
 
 function BodyTable() {
 	return (

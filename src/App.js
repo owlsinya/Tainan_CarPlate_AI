@@ -24,9 +24,8 @@ function App() {
             <Route path="/showalljson" element={<ShowAllJson/>} />
             <Route path="/bodytable" element={<BodyTable />} />
             </Routes>
-
             <hr></hr>
-            <div>此處為 Footer</div>
+
         </Router>
     )
 

@@ -19,7 +19,6 @@ function Body(){
 	return (
 		<>
 			<BodyTable />
-			
 			<Printer/>
 		</>
 	)
