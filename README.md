@@ -3,6 +3,7 @@
 ## `npm install react-router-dom@6`
 ## `npm install react-to-print@latest`
 ## `npm install react-bootstrap@latest` 
+## `npm install xlsx` 
 
 完成後啟動 
 

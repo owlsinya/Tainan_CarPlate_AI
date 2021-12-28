@@ -1,23 +1,29 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Excel from './components/Excel/Excel.js'
+
 import Header from "./components/Header/Header.js"
-import Body from "./components/Body/Body.js"
+import Body from './components/Body/Body'
+import Excel from './components/Excel/Excel.js'
 import Search from './components/Search/Search.js';
+import ShowAllJson from './components/ShowAllJson/ShowAllJson.js';
+import BodyTable from './components/BodyTable/BodyTable.js';
 
 
-export function App() {
+function App() {
     return (
         <Router>
-            <nav>
+            {<nav>
                 <Header />
             </nav>
+            }
             <Routes>
-                <Route path="/excel" element={<Excel />} />
-                <Route path="/body" element={<Body />} />
-                <Route path="/search" element={<Search />} />
+            <Route path="/head" element={<Header />} />
+            <Route path="/body" element={<Body />} />
+            <Route path="/excel" element={<Excel />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/showalljson" element={<ShowAllJson/>} />
+            <Route path="/bodytable" element={<BodyTable />} />
             </Routes>
-
 
             <hr></hr>
             <div>此處為 Footer</div>
@@ -26,29 +32,3 @@ export function App() {
 
 }
 export default App;
-
-// export default class App extends Component {
-//     render() {
-//         return (
-//             <>
-//                 <Header/>          
-//                 <Body/>
-//                 <Excel/>
-//             </>
-//         )
-//     }
-// }
-
-/*
-import React from 'react'
-import Printer from "./components/Printer/Printer.js"
-import Body from "./components/Body/Body.js"
-
-const App=()=> {
-    return (
-        <Printer />,
-        <Body />
-    );
-  }
-  */
-

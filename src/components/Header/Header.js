@@ -1,26 +1,29 @@
+/*
+網頁的Header
+頁面跳轉放這
+*/
+
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import PrintComponent from '../PrintComponent/PrintComponent';
 import Excel from '../Excel/Excel';
 
 
 function Header() {
-
 	let navigate = useNavigate();
 	return (
 		<div>
-			<h2>操作介面</h2>
+			<h2>台南科技執法</h2>
 			<button
 				onClick={() => {
-					navigate("/body");
-				}}>首頁</button>
+					navigate("/");
+				}}>登入</button>
 
 			<button
 				onClick={() => {
 					navigate("/search");
 				}}>查詢</button>
-			<Excel />
-			<PrintComponent />
+			
+			{/*<Excel />*/}
 			<hr color="black" />
 
 			<h2>相關資訊</h2>
