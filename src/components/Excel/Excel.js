@@ -1,6 +1,12 @@
-import React, { Component } from 'react'
-import XLSX from 'xlsx'
+/*
+匯出excel的按鈕(也可用link)
+當按下button
+會將id為 tblExport 的HTML table 
+下載到電腦中(excel檔)
+*/
 
+import React , {Component} from 'react'
+import XLSX from 'xlsx'
 
 export default class Excel extends Component {
 
