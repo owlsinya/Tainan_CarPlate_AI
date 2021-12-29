@@ -1,8 +1,5 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import PrintComponent from '../PrintComponent/PrintComponent';
-
-
 
 function Header() {
 

@@ -4,6 +4,7 @@ import Excel from './components/Excel/Excel.js'
 import Header from "./components/Header/Header.js"
 import Body from "./components/Body/Body.js"
 import Search from './components/Search/Search.js';
+import { BasicTable } from './components/BasicTable/BasicTable.js';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/excel" element={<Excel />} />
                 <Route path="/body" element={<Body />} />
                 <Route path="/search" element={<Search />} />
+                <Route path="/basictable" element={<BasicTable />} />
             </Routes>
             <hr></hr>
 
