@@ -3,7 +3,9 @@ import { useTable } from 'react-table'
 import MOCK from './MOCK.json'
 import { COLUMNS } from '../Columns/Columns'
 import './table.css'
-
+/*
+此頁面為json讀入表單主code, 並連結Columns.js來設定json的格式 
+*/
 
 export const BasicTable = () => {
 	const columns = useMemo(() => COLUMNS, [])

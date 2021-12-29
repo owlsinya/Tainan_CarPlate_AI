@@ -1,3 +1,4 @@
+/* 此處為設定coluns的js */
 export const COLUMNS = [
 	{
 		Header: '案號',

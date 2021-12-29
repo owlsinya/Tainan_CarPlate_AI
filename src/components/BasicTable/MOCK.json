@@ -5,6 +5,7 @@
     "car_type": "1",
     "datetime": "20211227200000",
     "location": "中山路",
-    "item": "未戴安全帽"
+    "item": "未戴安全帽",
+    "coder_comment": "此為展示用json檔"
   }
 ]
