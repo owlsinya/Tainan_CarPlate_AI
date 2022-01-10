@@ -15,11 +15,11 @@ import React from 'react'
 import BodyTable from '../BodyTable/BodyTable'
 import Printer from '../Printer/Printer';
 
-function Body(){
+function Body() {
 	return (
 		<>
 			<BodyTable />
-			<Printer/>
+			<Printer />
 		</>
 	)
 }
