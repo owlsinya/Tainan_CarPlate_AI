@@ -12,6 +12,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-to-print": "^2.14.2",
+    "rsuite-table": "^5.3.0",
     "table-to-excel": "^1.0.6",
     "web-vitals": "^2.1.2",
     "xlsx": "^0.17.4"

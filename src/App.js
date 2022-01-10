@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header.js"
+import LoadJson from './components/LoadJson/LoadJson.js';
 import Body from './components/Body/Body'
 import Excel from './components/Excel/Excel.js'
 import Search from './components/Search/Search.js';
@@ -14,9 +15,11 @@ function App() {
         <Router>
             {<nav>
                 <Header />
+                
             </nav>
             }
             <Routes>
+            <Route path="/" element={<LoadJson />} />
             <Route path="/head" element={<Header />} />
             <Route path="/body" element={<Body />} />
             <Route path="/excel" element={<Excel />} />
