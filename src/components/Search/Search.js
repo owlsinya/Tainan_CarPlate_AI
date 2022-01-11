@@ -53,6 +53,8 @@ function Search() {
 				onClick={() => {
 					navigate("/showalljson");
 				}}>查詢</button>
+				<h1>1. 依照輸入的條件 搜尋資料庫</h1>
+				<h1>2. 將搜尋資料庫後的json 傳給 showalljson</h1>
 		</div >
 	)
 }

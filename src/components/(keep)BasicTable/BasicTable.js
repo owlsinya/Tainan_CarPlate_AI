@@ -1,3 +1,9 @@
+/**
+ * 此component未用到
+ * 此種寫法為可map所有json的key value , 並更新到table
+ * 以後使用
+ */
+
 import React, { useMemo } from 'react'
 import { useTable } from 'react-table'
 import MOCK from './MOCK.json'

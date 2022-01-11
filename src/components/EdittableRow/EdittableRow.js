@@ -7,43 +7,13 @@ const EdittableRow = ({ editFormData, handleEditFormChange, handleCancelClick })
     return (
         <tr>
             <td>
-                <h4>{editFormData.number}</h4>
+                {editFormData.CameraName}
             </td>
             <td>
-                <input type="text"
-                    placeholder="car_number"
-                    name="car_number"
-                    value={editFormData.car_number}
-                    onChange={handleEditFormChange}
-                ></input>
+                {editFormData.RoadName}
             </td>
             <td>
-                <input type="text"
-                    placeholder="car_type"
-                    name="car_type"
-                    value={editFormData.car_type}
-                    onChange={handleEditFormChange}
-                ></input>
-            </td>
-            <td>
-                <input type="date"
-                    placeholder="datetime"
-                    name="datetime"
-                    value={editFormData.datetime}
-                    onChange={handleEditFormChange}
-                ></input>
-            </td>
-            <td>
-                <input type="text"
-                    placeholder="location"
-                    name="location"
-                    value={editFormData.location}
-                    onChange={handleEditFormChange}
-                ></input>
-            </td>
-            <td>
-                
-                <select name="item" value={editFormData.item} onChange={handleEditFormChange}>
+                <select name="Event" value={editFormData.Event} onChange={handleEditFormChange}>
                     <option value="illegal-1">(1)違規紅燈直行、右轉及左轉偵測</option>
                     <option value="illegal-2">(2)不依行向專用車道行駛偵測</option>
                     <option value="illegal-3">(3)機車行駛於禁行機慢車道偵測</option>
@@ -53,16 +23,52 @@ const EdittableRow = ({ editFormData, handleEditFormChange, handleCancelClick })
                     <option value="illegal-7">(7)車輛未禮讓行人偵測</option>
                     <option value="illegal-8">(8)違規(臨時)停車偵測</option>
                 </select>
-            
             </td>
             <td>
-                <h4>{editFormData.image_src}</h4>
+                <input type="text"
+                    placeholder="EventName"
+                    name="EventName"
+                    value={editFormData.EventName}
+                    onChange={handleEditFormChange}
+                ></input>
             </td>
             <td>
-                <h4>{editFormData.checked}</h4>
+                <input type="date"
+                    placeholder="EventDatetime"
+                    name="EventDatetime"
+                    value={editFormData.EventDatetime}
+                    onChange={handleEditFormChange}
+                ></input>
             </td>
             <td>
-                <h4>{editFormData.printed}</h4>
+                <select name="CarType" value={editFormData.CarType} onChange={handleEditFormChange}>
+                    <option value="行人">(1)行人</option>
+                    <option value="汽車">(2)汽車</option>
+                    <option value="機車">(3)機車</option>
+                    <option value="公車">(4)公車</option>
+                    <option value="卡車">(5)卡車</option>
+                    <option value="腳踏車">(6)腳踏車</option>
+                </select>
+            </td>
+            <td>
+                {editFormData.ImgName}
+            </td>
+            <td>
+                {editFormData.VideoName}
+            </td>
+            <td>
+                <input type="text"
+                    placeholder="CarNumber"
+                    name="CarNumber"
+                    value={editFormData.CarNumber}
+                    onChange={handleEditFormChange}
+                ></input>
+            </td>
+            <td>
+                {editFormData.checked}
+            </td>
+            <td>
+                {editFormData.printed}
             </td>
             <td>
                 <button type="submit">確認更改</button>

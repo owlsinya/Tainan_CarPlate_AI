@@ -1,3 +1,9 @@
+/**
+ * 此component未用到
+ * 搭配BasicTable 使用
+ */
+
+
 /* 此處為設定coluns的js */
 export const COLUMNS = [
 	{

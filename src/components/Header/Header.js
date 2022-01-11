@@ -14,13 +14,13 @@ function Header() {
 			<h2>台南市警察局科技執法系統</h2>
 			<button
 				onClick={() => {
-					navigate("/showalljson");
-				}}>開單</button>
+					navigate("/");
+				}}>尚未確認</button>
 
 			<button
 				onClick={() => {
 					navigate("/search");
-				}}>查詢</button>
+				}}>查詢&開單</button>
 
 			<button
 				onClick={() => {

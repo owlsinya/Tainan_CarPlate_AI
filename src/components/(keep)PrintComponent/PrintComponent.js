@@ -1,3 +1,9 @@
+/*
+* 此component未用到
+* 但這種寫法可以列印多個組件
+* 先留著 不見得有用
+*/
+
 import React, { useRef } from "react";
 import { Button } from "react-bootstrap";
 import ReactToPrint from "react-to-print";
