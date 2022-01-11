@@ -8,9 +8,7 @@ import Body from './components/Body/Body'
 import Excel from './components/Excel/Excel.js'
 import Search from './components/Search/Search.js';
 import ShowAllJson from './components/ShowAllJson/ShowAllJson.js';
-import BodyTable from './components/BodyTable/BodyTable.js';
 import Login from './components/Login/Login.js';
-import Test2 from './components/Test/Test2.js';
 
 import data from './test.json'
 
@@ -35,7 +33,7 @@ function App() {
 					<Route path="/excel" element={<Excel />} />
 					<Route path="/search" element={<Search />} />
 					<Route path="/showalljson" element={<ShowAllJson />} />
-					<Route path="/test" element={<Test2 />} />
+
 				</Routes>
 			</carContext.Provider>
 				<hr></hr>

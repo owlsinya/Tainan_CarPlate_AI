@@ -1,7 +1,5 @@
 /*
 呼叫ComponentToPrint.js中的components
-點選 <列印> 後 , 將'已出單'的tag改為true傳回至mysql儲存
-
 */
 import React, { useRef } from 'react';
 import ReactToPrint from 'react-to-print';
