@@ -12,6 +12,7 @@ import Login from './components/Login/Login.js';
 import data from './test.json'
 import SearchTable from './components/SearchTable/SearchTable.js';
 import Sidebar from './components/Sidebar/Sidebar.js';
+import './App.css';
 
 
 /* 增加一個 redirect 做登入畫面*/
