@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default function ReadOnlyRow({ car, handleEditclick, handleDeleteClick, handleConfirmClick }) {
-
+    if (car.checked === 'n') {
         return (
             <>
                 <tr>
@@ -35,5 +35,6 @@ export default function ReadOnlyRow({ car, handleEditclick, handleDeleteClick, h
             </>
 
         )
+    }
 }
 

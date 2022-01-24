@@ -29,7 +29,6 @@ export default function LoadJson() {
 		checked: '',
 		printed: ''
 	})
-
 	////////////////////////////////////////////////////////////////////////////
 	/***
 	 * 處理確認按鈕
@@ -158,11 +157,11 @@ export default function LoadJson() {
 	const handleDeleteClick = (carNumber) => {
 		var yes = window.confirm('確定刪除？');
 		if (yes) {
-			const newCars = [...cars]
-			const index = cars.findIndex((car) => car.CarNumber === carNumber)
-			newCars.splice(index, 1)
-			setCars(newCars)
-		}
+		const newCars = [...cars]
+		const index = cars.findIndex((car) => car.CarNumber === carNumber)
+		newCars.splice(index, 1)
+		setCars(newCars)
+		} 
 	}
 
 	////////////////////////////////////////////////////////////////////////////
@@ -207,7 +206,7 @@ export default function LoadJson() {
 							</Fragment>
 
 						))}
-						<p>這個表格是LoadJson讀入</p>
+						<h4>這個表格是LoadJson讀入</h4>
 					</tbody>
 				</table>
 			</form>
@@ -215,10 +214,10 @@ export default function LoadJson() {
 				onClick={() => {
 					navigate("/");
 				}}>送出-</button>
-			{/* <h1>  1. 只列出未checked的...在user登入以後馬上去搜尋一次資料庫?</h1>
+			<h1>  1. 只列出未checked的...在user登入以後馬上去搜尋一次資料庫?</h1>
 			<h1>  2. 按送出鈕後跳回此頁(redirect) + 更新顯示的資料</h1>
 			<h1>  3. 點表格中 "ImgName"	"VideoName" pop出照片 影片 或視窗</h1>
-			<h1>  4. Header裡面要增加統計報表的按鈕 跳轉至統計按鈕的頁面(excel)</h1> */}
+			<h1>  4. Header裡面要增加統計報表的按鈕 跳轉至統計按鈕的頁面(excel)</h1>
 		</div>
 	)
 }
