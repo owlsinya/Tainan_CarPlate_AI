@@ -4,7 +4,6 @@
 
 import React from 'react'
 import BodyTable from '../BodyTable/BodyTable.js';
-import ShowAllJson from '../ShowAllJson/ShowAllJson.js';
 
 
 export const ComponentToPrint = React.forwardRef((props, ref) => {
