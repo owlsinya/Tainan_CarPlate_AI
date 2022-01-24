@@ -7,6 +7,7 @@ import { SidebarData } from './SidebarData';
 import Submenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 
+// 此為最上方bar的code, 並呼叫整體sidebar+submenu的js
 
 const Nav = styled.div`
   background: #15171c;

@@ -4,6 +4,8 @@ import * as AiIcons from 'react-icons/ai'
 import * as IoIcons from 'react-icons/io'
 import * as RiIcons from 'react-icons/ri'
 
+// 此處為sidebar所需之data, Sidebar & Submenu 皆用 map 來讀取內容渲染在sidebar內
+
 export const SidebarData = [
   {
     title: '違規紅燈直行、右轉及左轉',

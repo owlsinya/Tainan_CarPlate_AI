@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
+//此為submenu的code
+
 const SidebarLink = styled(Link)`
   display:flex;
   color: #e1e9fc;
@@ -53,6 +55,7 @@ const Submenu = ({ item }) => {
           <SidebarLabel>{item.title}</SidebarLabel>
         </div>
         <div>
+          {/* 判斷SidebarData內的數據是否存在才啟動分頁功能 */}
           {item.subNav && subNav ? item.iconOpened : item.subNav ? item.iconClosed : null}
         </div>
       </SidebarLink>

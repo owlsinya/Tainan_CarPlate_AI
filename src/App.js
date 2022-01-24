@@ -24,7 +24,6 @@ function App() {
 		<Router>
 			{<nav>
 				<Sidebar />
-
 			</nav>
 			}
 			<carContext.Provider value={{ cars, setCars }}>
