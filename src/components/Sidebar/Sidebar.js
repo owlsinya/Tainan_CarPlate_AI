@@ -10,7 +10,7 @@ import { IconContext } from 'react-icons/lib';
 // 此為最上方bar的code, 並呼叫整體sidebar+submenu的js
 
 const Nav = styled.div`
-  background: #15171c;
+  background: #689DD6;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -27,7 +27,7 @@ const NavIcon = styled(Link)`
 `;
 
 const SidebarNav = styled.nav`
-  background: #15171c;
+  background: #689DD6;
   width: 350px;
   height: 150vh;
   display: flex;
