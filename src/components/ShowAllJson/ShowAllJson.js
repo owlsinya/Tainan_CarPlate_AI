@@ -1,11 +1,23 @@
-/*
-將查詢後的資料在此頁顯示
-*/
+/***
+ * 將查詢後的資料在此頁顯示
+ */
+
 import React, { useContext } from 'react'
 import { carContext } from '../../createContext'
 import { useNavigate } from "react-router-dom";
+import LoadJson from '../LoadJson/LoadJson';
 
 
+export default function ShowAllJson() {
+    return <div>
+        <h1>再call一次LoadJson
+        </h1>
+    </div>;
+}
+
+
+
+/*
 export default function ShowAllJson(navigation) {
     const navigate = useNavigate();
     const { cars, setCars } = useContext(carContext);
@@ -18,7 +30,21 @@ export default function ShowAllJson(navigation) {
         })
     }
 
+    const handleConfirmClick = (event, car, carNumber) => {
+        event.preventDefault()
 
+        const formValues = {
+            checked: "car.checked",
+            printed: "car.printed"
+        }
+
+        const index = cars.findIndex((car) => car.CarNumber === carNumber)
+        const confirmedCars = [...cars]
+
+        confirmedCars[index] = formValues
+        //將要更新的confirmedCar更新
+        setCars(confirmedCars)
+    }
 
     return (
         <div>
@@ -43,12 +69,21 @@ export default function ShowAllJson(navigation) {
                             <td>{car.CarNumber}</td>
                             <td>{car.checked}</td>
                             <td>{car.printed}</td>
-                            <td><button onClick={() => { navigate("/body")}}>送出</button></td>
+                            <td><button onClick={
+                                (event) => {
+                                    handleConfirmClick(event, car, car.CarNumber);
+
+                                    navigate("/test");
+                                    
+                                }}>送出</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
-            </table>
-            <h1>1. 按下送出後將按下的那row資料傳給body</h1>
-        </div>
+            </table >
+
+            
+        </div >
     )
 }
+*/

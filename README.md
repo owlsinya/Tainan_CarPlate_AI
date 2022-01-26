@@ -4,6 +4,8 @@
 ## `npm install react-to-print@latest`
 ## `npm install react-bootstrap@latest` 
 ## `npm install xlsx` 
+## `npm i file-saver` 
+
 
 完成後啟動 
 

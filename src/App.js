@@ -1,44 +1,54 @@
-import React , {useState} from 'react'
-import {carContext} from './createContext.js';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import React, { useState } from 'react'
+import { carContext } from './createContext.js';
+
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header.js"
 import LoadJson from './components/LoadJson/LoadJson.js';
-import Body from './components/Body/Body'
+
 import Excel from './components/Excel/Excel.js'
 import Search from './components/Search/Search.js';
 import ShowAllJson from './components/ShowAllJson/ShowAllJson.js';
 import Login from './components/Login/Login.js';
+import Test from './components/Test/Test'
 
 import data from './test.json'
 
 
 
-/* 增加一個 redirect 做登入畫面*/
+
 
 function App() {
+
 	const [cars, setCars] = useState(data);
-
+	
 	return (
-		<Router>
-			{<nav>
-				<Header />
-			</nav>
-			}
-			<carContext.Provider value={{ cars, setCars }}>
-				<Routes>
-					<Route path="/" element={<LoadJson />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/body" element={<Body />} />
-					<Route path="/excel" element={<Excel />} />
-					<Route path="/search" element={<Search />} />
-					<Route path="/showalljson" element={<ShowAllJson />} />
+		/*<div id='container'>*/
 
-				</Routes>
-			</carContext.Provider>
-				<hr></hr>
+			<Router>
+				{/*<div className='header'>*/}
+				<div>
+					{<nav>
+						<Header />
+					</nav>
+					}
+				</div>
+				{/*<div className='content'>*/}
+				<div>
+				<carContext.Provider value={{ cars, setCars }}>
+						<Routes>
+							<Route path="/" element={<LoadJson />} />
+							<Route path="/login" element={<Login />} />
+							<Route path="/search" element={<Search />} />
 
-		</Router>
+							<Route path="/excel" element={<Excel />} />
+							<Route path="/showallsearchjson" element={<ShowAllJson />} />
+							<Route path="/test" element={<Test />} />
+						</Routes>
+				</carContext.Provider>
+				</div>
+			</Router>
 	)
 
 }

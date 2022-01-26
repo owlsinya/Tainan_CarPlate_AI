@@ -1,16 +1,21 @@
 import React, { useState, Fragment, useContext } from 'react'
 import { carContext } from '../../createContext';
 
+
+
 import ReadOnlyRow from '../ReadOnlyRow/ReadOnlyRow';
 import EdittableRow from '../EdittableRow/EdittableRow';
-import { useNavigate } from "react-router-dom";
+
+
+import FileSaver from 'file-saver'
 
 
 export default function LoadJson() {
 
-	let navigate = useNavigate();
+
 
 	const { cars, setCars } = useContext(carContext)
+
 
 	//用來保存按下edit按鈕時 的那排row的car_number
 	const [editCarNumber, seteditCarNumber] = useState(null)
@@ -23,12 +28,13 @@ export default function LoadJson() {
 		EventName: '',
 		EventDatetime: '',
 		CarType: '',
-		ImgName: '',
+		ImgName: cars.ImgName,
 		VideoName: '',
 		CarNumber: '',
 		checked: '',
 		printed: ''
 	})
+	
 
 	////////////////////////////////////////////////////////////////////////////
 	/***
@@ -53,10 +59,10 @@ export default function LoadJson() {
 			VideoName: car.VideoName,
 			CarNumber: car.CarNumber,
 			checked: "car.checked",
-			printed: car.printed
+			printed: car.printed,
 		}
 		//創建一個confirmedCars陣列 , 複製原始cars物件陣列 , 
-		//並將按下確認按鈕的那排index加入到confimedCars
+		//並將按下確認按鈕的那排index的內容更新到confimedCars
 
 		const index = cars.findIndex((car) => car.CarNumber === carNumber)
 		const confirmedCars = [...cars]
@@ -64,7 +70,46 @@ export default function LoadJson() {
 		confirmedCars[index] = formValues
 		//將要更新的confirmedCar更新
 		setCars(confirmedCars)
+
+
+		//將按下的內容存到saveArr陣列
+		const saveArr=[]
+		saveArr.push(confirmedCars[index])
+	
+		//執行download,將此confirmedCars[index]物件轉成JSON.stringify
+		//JSON.stringify(value[, replacer[, space]] )
+		//downloadtxt(data, filename, type)
+		downloadtxt(JSON.stringify(confirmedCars[index],null,'\t'), confirmedCars[index].CarNumber, 'txt') 
+		//下載照片
+		downloadImage(confirmedCars[index])
+
+		//將確認後的物件移出陣列中
+		confirmedCars.splice(index,1)
+		setCars(confirmedCars)
 	}
+
+	function downloadImage(confirmedCars){
+		FileSaver.saveAs(confirmedCars.ImgName, confirmedCars.CarNumber+'.jpg');
+	  }
+
+	//將JSON.stringify存成指定的data type(txt)
+	//downloadtxt(data, filename, type)
+	function downloadtxt(data, filename, type) {
+		var file = new Blob([data], {type: type});
+		
+			var a = document.createElement("a"),
+			url = URL.createObjectURL(file);
+			a.href = url;
+			a.download = filename;
+			document.body.appendChild(a);
+			a.click();
+			setTimeout(function() {
+				document.body.removeChild(a);
+				window.URL.revokeObjectURL(url);  
+			}, 0); 
+		
+	}
+
 
 	/******************************************
 	 * 當按下修改按鈕時 呼叫handleEditclick函式
@@ -123,7 +168,7 @@ export default function LoadJson() {
 
 		//用editedCar去接所有editFormData中的car object
 		const editedCar = {
-			CameraName: editCarNumber,
+			CameraName: editFormData.CameraName,
 			RoadName: editFormData.RoadName,
 			Event: editFormData.Event,
 			EventName: editFormData.EventName,
@@ -131,6 +176,7 @@ export default function LoadJson() {
 			CarType: editFormData.CarType,
 			ImgName: editFormData.ImgName,
 			VideoName: editFormData.VideoName,
+			//CarNumber: editCarNumber,
 			CarNumber: editFormData.CarNumber,
 			checked: "car.checked",
 			printed: editFormData.printed
@@ -169,12 +215,14 @@ export default function LoadJson() {
 	/******************** 
 	 * 讀取object keys
 	 ********************/
+	/*
 	const tableHeader = () => {
 		let header = Object.keys(cars[0])
 		return header.map((key, index) => {
 			return <th key={index}> {key} </th>
 		})
 	}
+	*/
 
 	////////////////////////////////////////////////////////////////////////////
 	return (
@@ -182,8 +230,14 @@ export default function LoadJson() {
 			<form onSubmit={handleEditFormSubmit}>
 				<table border="1">
 					<thead>
-						<tr>{tableHeader()}
-							<th>check確認</th>
+						<tr>
+							<th>時間</th>
+							<th>攝影機號碼</th>
+							<th>地點</th>
+							<th>車號</th>
+							<th>照片</th>
+							<th>影片</th>
+							<th>處理狀態</th>
 						</tr>
 					</thead>
 
@@ -192,6 +246,7 @@ export default function LoadJson() {
 							<Fragment>
 								{editCarNumber === car.CarNumber ? (
 									<EdittableRow
+										car={car}
 										editFormData={editFormData}
 										handleEditFormChange={handleEditFormChange}
 										handleCancelClick={handleCancelClick}
@@ -202,23 +257,17 @@ export default function LoadJson() {
 										handleEditclick={handleEditclick}
 										handleDeleteClick={handleDeleteClick}
 										handleConfirmClick={handleConfirmClick}
+
 									/>
 								)}
 							</Fragment>
 
 						))}
-						<h4>這個表格是LoadJson讀入</h4>
 					</tbody>
 				</table>
 			</form>
-			<button
-				onClick={() => {
-					navigate("/");
-				}}>送出-</button>
-			<h1>  1. 只列出未checked的...在user登入以後馬上去搜尋一次資料庫?</h1>
-			<h1>  2. 按送出鈕後跳回此頁(redirect) + 更新顯示的資料</h1>
-			<h1>  3. 點表格中 "ImgName"	"VideoName" pop出照片 影片 或視窗</h1>
-			<h1>  4. Header裡面要增加統計報表的按鈕 跳轉至統計按鈕的頁面(excel)</h1>
+			
+			
 		</div>
 	)
 }
