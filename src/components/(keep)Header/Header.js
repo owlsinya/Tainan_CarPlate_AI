@@ -6,7 +6,7 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Col, Row } from "react-bootstrap";
-import "./Header.css"
+// import "./Header.css"
 
 function Header() {
 	let navigate = useNavigate();

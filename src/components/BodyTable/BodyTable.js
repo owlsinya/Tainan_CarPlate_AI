@@ -2,7 +2,7 @@
 將點選的該筆資料製作成表格 , 且包含兩張照片檔 , 影片URL
 */
 import React from 'react'
-import './BodyTable.css'
+// import './BodyTable.css'
 
 function BodyTable() {
 	return (
