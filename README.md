@@ -1,10 +1,10 @@
 ## 下載完成後啟動 
-# `npm start`
+### `npm start`
 
-### 若有元件需安裝，請依照錯誤訊息安裝所需套件
-## 以下套件僅供安裝參考
-## `npm install react-router-dom@6 react-bootstrap@latest styled-components react-icons`
-## `npm install react-to-print@latest`
+## 若有元件需安裝，請依照錯誤訊息安裝所需套件
+#### 以下套件僅供安裝參考
+#### `npm install react-router-dom@6 react-bootstrap@latest styled-components react-icons`
+#### `npm install react-to-print@latest`
 
 
 <!-- 
