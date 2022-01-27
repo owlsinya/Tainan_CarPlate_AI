@@ -30,6 +30,7 @@ export default function ShowAllJson(navigation) {
         })
     }
 
+
     const handleConfirmClick = (event, car, carNumber) => {
         event.preventDefault()
 
@@ -45,6 +46,7 @@ export default function ShowAllJson(navigation) {
         //將要更新的confirmedCar更新
         setCars(confirmedCars)
     }
+
 
     return (
         <div>
@@ -69,6 +71,7 @@ export default function ShowAllJson(navigation) {
                             <td>{car.CarNumber}</td>
                             <td>{car.checked}</td>
                             <td>{car.printed}</td>
+
                             <td><button onClick={
                                 (event) => {
                                     handleConfirmClick(event, car, car.CarNumber);
@@ -84,6 +87,7 @@ export default function ShowAllJson(navigation) {
 
             
         </div >
+
     )
 }
 */

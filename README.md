@@ -1,5 +1,8 @@
-## 下載後請先在資料夾的終端安裝
-## `npm install`
+## 下載完成後啟動 
+# `npm start`
+
+### 若有元件需安裝，請依照錯誤訊息安裝所需套件
+<!-- ## `npm install`
 ## `npm install react-router-dom@6`
 ## `npm install react-to-print@latest`
 ## `npm install react-bootstrap@latest` 
@@ -7,9 +10,7 @@
 ## `npm i file-saver` 
 
 
-完成後啟動 
 
-## `npm start`
 
 
 

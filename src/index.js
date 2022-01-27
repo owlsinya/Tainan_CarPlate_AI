@@ -1,7 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './App.js'
+import React, { createContext, useState } from 'react';
+import App from './App';
+import { render } from "react-dom";
 
+export const ActiveContext = createContext();
 
+function ActiveProvider({ children }) {
+  const [active, setActive] = useState(1);
 
-ReactDOM.render(<App /> , document.getElementById('root'))
+  return (
+    <ActiveContext.Provider value={{ active, setActive }}>
+      {children}
+    </ActiveContext.Provider>
+  );
+}
+
+render(
+  <ActiveProvider>
+    <App />
+  </ActiveProvider>,
+  document.getElementById("root")
+);

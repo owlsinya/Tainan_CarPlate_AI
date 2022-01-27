@@ -1,8 +1,5 @@
 import React, { useState, Fragment, useContext } from 'react'
 import { carContext } from '../../createContext';
-
-
-
 import ReadOnlyRow from '../ReadOnlyRow/ReadOnlyRow';
 import EdittableRow from '../EdittableRow/EdittableRow';
 
@@ -204,11 +201,11 @@ export default function LoadJson() {
 	const handleDeleteClick = (carNumber) => {
 		var yes = window.confirm('確定刪除？');
 		if (yes) {
-		const newCars = [...cars]
-		const index = cars.findIndex((car) => car.CarNumber === carNumber)
-		newCars.splice(index, 1)
-		setCars(newCars)
-		} 
+			const newCars = [...cars]
+			const index = cars.findIndex((car) => car.CarNumber === carNumber)
+			newCars.splice(index, 1)
+			setCars(newCars)
+		}
 	}
 
 	////////////////////////////////////////////////////////////////////////////
@@ -263,11 +260,11 @@ export default function LoadJson() {
 							</Fragment>
 
 						))}
+
 					</tbody>
 				</table>
 			</form>
-			
-			
+		
 		</div>
 	)
 }
