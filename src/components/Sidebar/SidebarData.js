@@ -16,63 +16,43 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: '案件審查',
+        title: '未審查案件',
         path: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: '資料管理',
-        path: '/overview/revenue',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '設備管理',
-        path: '/overview/users',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '統計清冊',
-        path: '/overview/users',
+        title: '資料查詢',
+        path: '/searchtable',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: '數據分析',
-        path: '/overview/users',
+        path: '/tableapp',
         icon: <IoIcons.IoIosPaper />
       }
     ]
   },
   {
     title: '不依行向專用車道行駛偵測',
-    path: '/reports',
+    path: '#',
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
       {
-        title: '案件審查',
+        title: '未審查案件',
         path: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: '資料管理',
-        path: '/overview/revenue',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '設備管理',
-        path: '/overview/users',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '統計清冊',
-        path: '/overview/users',
+        title: '資料查詢',
+        path: '/searchtable',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: '數據分析',
-        path: '/overview/users',
+        path: '/tableapp',
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -86,28 +66,43 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: '案件審查',
+        title: '未審查案件',
         path: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: '資料管理',
-        path: '/overview/revenue',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '設備管理',
-        path: '/overview/users',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '統計清冊',
-        path: '/overview/users',
+        title: '資料查詢',
+        path: '/searchtable',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: '數據分析',
-        path: '/overview/users',
+        path: '/tableapp',
+        icon: <IoIcons.IoIosPaper />
+      }
+    ]
+  },
+  {
+    title: '機慢車停等區車輛違規停放',
+    path: '/reports',
+    icon: <IoIcons.IoIosPaper />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+
+    subNav: [
+      {
+        title: '未審查案件',
+        path: '/',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: '資料查詢',
+        path: '/searchtable',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: '數據分析',
+        path: '/tableapp',
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -121,28 +116,18 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: '案件審查',
+        title: '未審查案件',
         path: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: '資料管理',
-        path: '/overview/revenue',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '設備管理',
-        path: '/overview/users',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '統計清冊',
-        path: '/overview/users',
+        title: '資料查詢',
+        path: '/searchtable',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: '數據分析',
-        path: '/overview/users',
+        path: '/tableapp',
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -156,28 +141,18 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: '案件審查',
+        title: '未審查案件',
         path: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: '資料管理',
-        path: '/overview/revenue',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '設備管理',
-        path: '/overview/users',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '統計清冊',
-        path: '/overview/users',
+        title: '資料查詢',
+        path: '/searchtable',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: '數據分析',
-        path: '/overview/users',
+        path: '/tableapp',
         icon: <IoIcons.IoIosPaper />
       }
     ]
@@ -191,28 +166,43 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: '案件審查',
+        title: '未審查案件',
         path: '/',
         icon: <IoIcons.IoIosPaper />
       },
       {
-        title: '資料管理',
-        path: '/overview/revenue',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '設備管理',
-        path: '/overview/users',
-        icon: <IoIcons.IoIosPaper />
-      },
-      {
-        title: '統計清冊',
-        path: '/overview/users',
+        title: '資料查詢',
+        path: '/searchtable',
         icon: <IoIcons.IoIosPaper />
       },
       {
         title: '數據分析',
-        path: '/overview/users',
+        path: '/tableapp',
+        icon: <IoIcons.IoIosPaper />
+      }
+    ]
+  },
+  {
+    title: '違規臨時)停車偵測',
+    path: '/reports',
+    icon: <IoIcons.IoIosPaper />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+
+    subNav: [
+      {
+        title: '未審查案件',
+        path: '/',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: '資料查詢',
+        path: '/searchtable',
+        icon: <IoIcons.IoIosPaper />
+      },
+      {
+        title: '數據分析',
+        path: '/tableapp',
         icon: <IoIcons.IoIosPaper />
       }
     ]

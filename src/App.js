@@ -10,9 +10,12 @@ import Login from './components/Login/Login.js';
 import data from './test.json'
 import Sidebar from './components/Sidebar/Sidebar.js';
 import TableApp from './components/Tablelist/TableApp.js';
+import Search from './components/Search/Search.js';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchTable from './components/SearchTable/SearchTable.js';
+import Test2 from './components/Test/Test2.js';
 
 
 /* 增加一個 redirect 做登入畫面*/
@@ -21,7 +24,9 @@ function App() {
 	const [cars, setCars] = useState(data);
 
 	return (
+
 		<Router>
+
 			{<nav>
 				<Sidebar />
 			</nav>
@@ -34,6 +39,9 @@ function App() {
 					<Route path="/excel" element={<Excel />} />
 					<Route path="/showalljson" element={<ShowAllJson />} />
 					<Route path="/tableapp" element={<TableApp />} />
+					<Route path="/search" element={<Search />} />
+					<Route path="/searchtable" element={<SearchTable />} />
+					<Route path="/test2" element={<Test2 />} />
 				</Routes>
 			</carContext.Provider>
 			<hr></hr>
