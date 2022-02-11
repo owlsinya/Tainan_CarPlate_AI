@@ -25,9 +25,9 @@ export default function MyTable(props) {
 				<td>{value.CarType}</td>
 				<td>{value.ImgName}</td>
 				<td>{value.VideoName}</td>
-				<td>{value.CarNumber}</td>
-				<td>{value.checked}</td>
-				<td>{value.printed}</td>
+				<td>{value.PlateNumber}</td>
+				{/* <td>{value.checked}</td>
+				<td>{value.printed}</td> */}
 			</tr>
 		);
 	}
