@@ -13,7 +13,12 @@ const getUrl = async (url) => {
   return results;
 }
 const DBJson = getUrl("http://61.216.140.11:9098/book/");
-console.log(DBJson);
+
+//const obj = Object.assign({}, DBJson);
+console.log(DBJson)
+console.log(typeof (DBJson.ID))
+
+
 
 
 // for (let i = 0; i < { myJson.length }; i++) {
