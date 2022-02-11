@@ -1,16 +1,12 @@
-.img{
-    width:100vw;
-    height: 100vh;
-    padding: 5px;
-  }
+
   .titleCloseBtn{
     display: flex;
     justify-content: flex-end;
   }
   .titleCloseBtn button{
-    background-color:transparent;
+    background-color:honeydew;
     border: none;
-    font-size: 25px;
+    font-size: 50px;
     cursor: pointer;
   }
   /*

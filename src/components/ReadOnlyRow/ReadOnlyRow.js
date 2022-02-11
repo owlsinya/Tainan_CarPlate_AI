@@ -1,5 +1,6 @@
 import React from 'react'
 import ShowImage from '../ShowImage/ShowImage'
+import ShowVideo from '../ShowVideo/ShowVideo'
 
 
 
@@ -13,12 +14,12 @@ export default function ReadOnlyRow({ car, handleEditclick, handleDeleteClick, h
                 <td>{car.EventDatetime}</td>
                 <td>{car.CameraName}</td>
                 <td>{car.RoadName}</td>
-                <td>{car.CarNumber}</td>
+                <td>{car.PlateNumber}</td>
                 <td><ShowImage car={car} /></td>
-                <td>{car.VideoName}</td>
-                <td>{car.checked}</td>
+                <td><ShowVideo car={car} /></td>
+                    
+                <td>{car.Checked}</td>
         
-
                 <td>
                     <button
                         type="button"
@@ -26,12 +27,12 @@ export default function ReadOnlyRow({ car, handleEditclick, handleDeleteClick, h
                     </button>
                     <button
                         type="button"
-                        onClick={(event) => handleDeleteClick(car.CarNumber)}>刪除
+                        onClick={(event) => handleDeleteClick(car.PlateNumber)}>刪除
                     </button>
                     <button
                         type="button"
                         onClick={(event) => 
-                            handleConfirmClick(event, car, car.CarNumber)
+                            handleConfirmClick(event, car, car.PlateNumber)
                         }>儲存
                     </button>
                     

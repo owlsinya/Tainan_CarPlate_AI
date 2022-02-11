@@ -19,6 +19,11 @@ const modalBackground = {
 
 export default function ShowLargeImage({ car, setShowImg }) {
 
+    const imagesrc = () => {
+        const imagesrc = './image/' + car.ImgName4 + '.jpg'
+        return imagesrc
+    }
+
     return (
         <div style={modalBackground}>
             <div style={modalContainer}>
@@ -31,7 +36,8 @@ export default function ShowLargeImage({ car, setShowImg }) {
 
                 <img className='img'
                     alt=''
-                    src={car.ImgName}
+                    width='60%'
+                    src={imagesrc()}
                     onClick={
                         () => {
                             setShowImg(false)

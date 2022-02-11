@@ -8,6 +8,7 @@
 ## `npm install react-bootstrap@latest` 
 ## `npm install xlsx` 
 ## `npm i file-saver` 
+## ` npm install react-player --save` 
 
 
 

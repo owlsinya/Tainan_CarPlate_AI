@@ -4,13 +4,11 @@
 */
 
 import React from 'react'
-import { useNavigate } from "react-router-dom";
 import { Container, Col, Row } from 'react-bootstrap';
-import SearchTable from '../SearchTable/SearchTable';
+
 
 
 function Search() {
-	let navigate = useNavigate();
 
 	return (
 
@@ -51,38 +49,21 @@ function Search() {
 									<option value="1">1.已開單</option>
 									<option value="2">2.未開單</option>
 								</select></Col>
-							<Col sm={1}><button
-								onClick={() => {
-									navigate("/searchtable");
-									// <SearchTable />
-								}}>查詢</button></Col>
+							<Col sm={1}><button>查詢</button></Col>
 						</Row>
 					</Container>
 				</div>
 			</div>
 
 			<hr />
-<<<<<<< HEAD
+
 			<button
-				onClick={() => {
-					navigate("/showallsearchjson");
-				}}>查詢</button>
+				>查詢</button>
 				
-=======
-
-			{/* <h4>1. 依照輸入的條件 搜尋資料庫</h4>
-			<h4>2. 將搜尋資料庫後的json 傳給 showalljson</h4> */}
-
-
->>>>>>> c46b04543a56bb03b3878d07dc599737822afcd7
 		</div >
 
 	)
 }
-
-<<<<<<< HEAD
-export default Search
-=======
 
 
 // $(relationTable).bootstrapTable('load', data);
@@ -95,4 +76,3 @@ export default Search
 // 	}
 // });
 export default Search
->>>>>>> c46b04543a56bb03b3878d07dc599737822afcd7

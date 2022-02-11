@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import ShowImage from '../ShowImage/ShowImage'
+import ShowVideo from '../ShowVideo/ShowVideo'
 
 const EdittableRow = ({car, editFormData, handleEditFormChange, handleCancelClick }) => {
     
@@ -20,9 +21,9 @@ const EdittableRow = ({car, editFormData, handleEditFormChange, handleCancelClic
             </td>
             <td>
                 <input type="text"
-                    placeholder="CarNumber"
-                    name="CarNumber"
-                    value={editFormData.CarNumber}
+                    placeholder="PlateNumber"
+                    name="PlateNumber"
+                    value={editFormData.PlateNumber}
                     onChange={handleEditFormChange}
                 ></input>
             </td>
@@ -35,7 +36,7 @@ const EdittableRow = ({car, editFormData, handleEditFormChange, handleCancelClic
             </td>
            
             <td>
-                {editFormData.checked}
+                {editFormData.Checked}
             </td>
 
             <td>
