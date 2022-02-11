@@ -23,7 +23,7 @@ export default function MyTable(props) {
 				<td>{value.EventName}</td>
 				<td>{value.EventDatetime}</td>
 				<td>{value.CarType}</td>
-				<td>{value.ImgName}</td>
+				<td>{value.ImgName0}</td>
 				<td>{value.VideoName}</td>
 				<td>{value.PlateNumber}</td>
 				{/* <td>{value.checked}</td>
@@ -156,7 +156,7 @@ export default function MyTable(props) {
 			</Table>
 			<Pagination>
 				<MakePaginationItem size={
-					tableData.length % sizePerPage === 0 ? tableData.length / sizePerPage : tableData.length / sizePerPage + 1
+					tableData.length % sizePerPage === 0 ? tableData.length / sizePerPage : parseInt(tableData.length / sizePerPage) + 1
 				} />
 			</Pagination>
 		</>
