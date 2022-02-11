@@ -23,7 +23,6 @@ function TableApp() {
 
     getData();
   });
-  console.log(data);
 
   return (
     <>

@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { carContext } from './createContext.js';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
-import LoadJson from './components/LoadJson/LoadJson.js';
+// import LoadJson from './components/LoadJson/LoadJson.js';
 import Body from './components/Body/Body'
 import Excel from './components/Excel/Excel.js'
 import ShowAllJson from './components/ShowAllJson/ShowAllJson.js';
 import Login from './components/Login/Login.js';
 import data from './test.json'
-import Sidebar from './components/Sidebar/Sidebar.js';
+// import Sidebar from './components/Sidebar/Sidebar.js';
 import TableApp from './components/Tablelist/TableApp.js';
 import Search from './components/Search/Search.js';
 
@@ -28,7 +28,7 @@ function App() {
 		<div className='grid-container'>
 			<div className='header'>
 				<div className='header-container'>
-					<div className='header-title'>台南市警局</div>
+					<div className='header-title'>台南市警察局 科技執法管理系統</div>
 					<div className='header-logout'>登出</div>
 				</div>
 			</div>
