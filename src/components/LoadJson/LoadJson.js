@@ -124,7 +124,7 @@ export default function LoadJson() {
 
 		//將要更新的confirmedCar更新
 
-	
+
 		//將按下的內容存到saveArr陣列
 		const saveArr = []
 		saveArr.push(confirmedCars[index])
@@ -133,12 +133,14 @@ export default function LoadJson() {
 		//執行download,將此confirmedCars[index]物件轉成JSON.stringify
 		//JSON.stringify(value[, replacer[, space]] )
 		//downloadtxt(data, filename, type)
+
 		//	//要改存的txt檔名改這邊  avevalue[index].EventDatetime+'_'+savevalue[index].PlateNumber, 'txt')
 		downloadtxt(result, savevalue[index].EventDatetime+'_'+savevalue[index].PlateNumber, 'txt')
 		//downloadtxt(JSON.stringify(savevalue[index], null, '\t'), savevalue[index].EventDatetime+'_'+savevalue[index].PlateNumber, 'txt')
 
 		//下載照片
 		downloadImage(confirmedCars[index])
+
 
 		//將確認後的物件移出陣列中
 		confirmedCars.splice(index, 1)
@@ -302,10 +304,10 @@ export default function LoadJson() {
 	 ********************/
 	/*
 	const tableHeader = () => {
-		let header = Object.keys(cars[0])
-		return header.map((key, index) => {
-			return <th key={index}> {key} </th>
-		})
+	 let header = Object.keys(cars[0])
+	 return header.map((key, index) => {
+		return <th key={index}> {key} </th>
+	 })
 	}
 	*/
 

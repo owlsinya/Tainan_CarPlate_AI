@@ -7,7 +7,6 @@ import ShowVideo from '../ShowVideo/ShowVideo'
 export default function ReadOnlyRow({ car, handleEditclick, handleDeleteClick, handleConfirmClick }) {
 
 
-    
     return (
         <>
             <tr>
@@ -17,9 +16,9 @@ export default function ReadOnlyRow({ car, handleEditclick, handleDeleteClick, h
                 <td>{car.PlateNumber}</td>
                 <td><ShowImage car={car} /></td>
                 <td><ShowVideo car={car} /></td>
-                    
+
                 <td>{car.Checked}</td>
-        
+
                 <td>
                     <button
                         type="button"
@@ -31,15 +30,14 @@ export default function ReadOnlyRow({ car, handleEditclick, handleDeleteClick, h
                     </button>
                     <button
                         type="button"
-                        onClick={(event) => 
+                        onClick={(event) =>
                             handleConfirmClick(event, car, car.PlateNumber)
                         }>儲存
                     </button>
-                    
+
                 </td>
             </tr>
         </>
 
     )
 }
-

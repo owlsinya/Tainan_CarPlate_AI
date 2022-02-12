@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 
 // import LoadJson from './components/LoadJson/LoadJson.js';
 
+
 import Excel from './components/Excel/Excel.js'
 import ShowAllJson from './components/ShowAllJson/ShowAllJson.js';
 import Login from './components/Login/Login.js';
@@ -17,6 +18,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 
 import Test from './components/Test/Test.js';
+import LoadJson from './components/LoadJson/LoadJson.js';
 
 
 /* 增加一個 redirect 做登入畫面*/
@@ -80,6 +82,8 @@ function App() {
 						<Route path="/tableapp" element={<TableApp />} />
 						<Route path="/search" element={<Search />} />
 						<Route path="/test" element={<Test />} />
+						<Route path="/" element={<LoadJson />} />
+
 					</Routes>
 				</carContext.Provider>
 			</div>

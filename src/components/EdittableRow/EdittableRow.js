@@ -5,9 +5,10 @@ import React from 'react'
 import ShowImage from '../ShowImage/ShowImage'
 import ShowVideo from '../ShowVideo/ShowVideo'
 
+
 const EdittableRow = ({car, editFormData, handleEditFormChange, handleCancelClick }) => {
     
-    
+
     return (
         <tr>
             <td>
@@ -27,20 +28,21 @@ const EdittableRow = ({car, editFormData, handleEditFormChange, handleCancelClic
                     onChange={handleEditFormChange}
                 ></input>
             </td>
-         
+
+
             <td >
-            <ShowImage car={car}/>
+                <ShowImage car={car} />
             </td>
             <td>
                 {editFormData.VideoName}
             </td>
-           
+
             <td>
                 {editFormData.Checked}
             </td>
 
             <td>
-              
+
                 <button type="submit">確認修改</button>
                 <button type="button" onClick={handleCancelClick}>取消</button>
             </td>
