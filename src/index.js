@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import App from './App';
+import { BrowserRouter } from "react-router-dom";
 import { render } from "react-dom";
 
 export const ActiveContext = createContext();
@@ -15,8 +16,10 @@ function ActiveProvider({ children }) {
 }
 
 render(
-  <ActiveProvider>
-    <App />
-  </ActiveProvider>,
+  <BrowserRouter>
+    <ActiveProvider>
+      <App />
+    </ActiveProvider>
+  </BrowserRouter>,
   document.getElementById("root")
 );

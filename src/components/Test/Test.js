@@ -1,7 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { carContext } from '../../createContext';
-import Excel from '../Excel/Excel'
-
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Sidebar from '../Sidebar/Sidebar';
+import LoadJson from '../LoadJson/LoadJson';
+import useFetch from '../useFetch/useFetch.js';
 /**
  * 
  1)	規類型件數統計表(每週、每月)
@@ -9,18 +11,22 @@ import Excel from '../Excel/Excel'
 (3)	違規類型車輛明細表。
 
  */
-
-//GET
 /*
-fetch("http://61.216.140.11:9098/book/",{method:'GET'})
-.then(res=>{
-    return res.json()
-    //res.text()可得到string
-})
-  .then(data=>console.log(data))
-  .catch(error=>console.log(error))
+const getData = () => fetch('http://61.216.140.11:9098/book/').then(response => response.json()).then(({results}) => results)
+let movies = ''
+getData().then(results => {movies = results })
+console.log(movies)
 */
 
+
+/*
+fetch("http://61.216.140.11:9098/book/")
+.then(res=>{
+  return res.json()
+})
+.then(data=>console.log(data))
+ 
+ */
 
 //POST
 /*
@@ -34,41 +40,37 @@ fetch("http://61.216.140.11:9098/book/" ,{
 })
 .then(data=>console.log(data))
 
-  
 */
-
-
-
-export default function Test() {
-  const { cars, setCars } = useContext(carContext)
 /*
-  let f=fetch("http://61.216.140.11:9098/book/")
-  f.then(function(userData){
-    return userData.json()
-  })
-  .then(function(data){
-    console.log( data)
-  })
+
+  fetch("http://61.216.140.11:9098/book/")
+    .then(res => {
+      return res.json()
+    })
+    .then(data => { console.log(data) })
 */
 
-fetch("http://61.216.140.11:9098/book/",{method:'GET'})
-.then(res=>{
-    return res.json()
-    //res.text()可得到string
-})
-  .then(data=>data)
-  .catch(error=>console.log(error))
+function Test() {
+  
+  //const { data, loading, error } = useFetch("http://61.216.140.11:9098/book/")
 
-  console.log(data)
+//console.log({data})
+  return (
+	<div>
+  </div>
+	)
+}
 
+export default Test
+/*
   return (
     <div>
       <h1>{cars[0].CreateAt}</h1>
       <button>違規類型件數統計表  Event</button>
       <button>違規類型車種件數統計表  Event + CarType</button>
       <button>違規類型車輛明細表   Event + CarNumber</button>
-      
-      
+
+
       <table id="tblExport" border="1" width="100%">
         <tbody>
           <tr><td>攝影機</td><td>1111</td></tr>
@@ -80,11 +82,11 @@ fetch("http://61.216.140.11:9098/book/",{method:'GET'})
 
         </tbody>
       </table>
-      <Excel fname={cars[1].CarNumber}/>
+      <Excel fname={cars[1].CarNumber} />
     </div>
   )
 }
-
+*/
 
 
 

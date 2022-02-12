@@ -57,8 +57,7 @@ function Search() {
 
 			<hr />
 
-			<button
-				>查詢</button>
+			
 				
 		</div >
 

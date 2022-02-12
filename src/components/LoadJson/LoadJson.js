@@ -138,7 +138,7 @@ export default function LoadJson() {
 		//downloadtxt(JSON.stringify(savevalue[index], null, '\t'), savevalue[index].EventDatetime+'_'+savevalue[index].PlateNumber, 'txt')
 
 		//下載照片
-		//downloadImage(confirmedCars[index])
+		downloadImage(confirmedCars[index])
 
 		//將確認後的物件移出陣列中
 		confirmedCars.splice(index, 1)
