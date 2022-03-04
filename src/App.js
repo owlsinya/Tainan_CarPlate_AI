@@ -1,116 +1,123 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { carContext } from './createContext.js';
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// import LoadJson from './components/LoadJson/LoadJson.js';
-
-
-import Excel from './components/Excel/Excel.js'
-import ShowAllJson from './components/ShowAllJson/ShowAllJson.js';
-import Login from './components/Login/Login.js';
-import data from './test.json'
-// import Sidebar from './components/Sidebar/Sidebar.js';
-import TableApp from './components/Tablelist/TableApp.js';
 import Search from './components/Search/Search.js';
+
+import ExcelTable from './components/ExcelTable/ExcelTable'
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 
-import Test from './components/Test/Test.js';
 import LoadJson from './components/LoadJson/LoadJson.js';
 
+import Test from './components/Test/Test.js';
+import ExcelCar from './components/Excel_Car/Excel_Car'
+import Excel_Type from './components/Excel_Type/Excel_Type.js';
 
-/* 增加一個 redirect 做登入畫面*/
 
 function App() {
-	const [cars, setCars] = useState(data);
+	let navigate = useNavigate();
+
+	const [query, setQuery] = useState('');
+	const [cars, setCars] = useState([]);
+
+	function handle_type_selector(value) {
+
+		let str = ''
+		if (value === '99') str = 99
+		else if (value === '1') str = 0
+		else if (value === '2') str = 4
+		else if (value === '3') str = 7
+		else if (value === '4') str = 8
+		else if (value === '5') str = 10
+		else if (value === '6') str = 11
+		else if (value === '7') str = 9
+		else if (value === '8') str = 3
+		else;
+		setQuery(str)
+		const fetchData = async () => {
+			let data = {
+				"Eventdatetime0": "2022-03-01T00:00:00",
+				"Eventdatetime1": "2022-03-01T23:59:59",
+				"Event": str,
+				"Checked": 0
+			}
+			console.log('data')
+			console.log(data)
+			query(data)
+			function query(Body) {
+                let str = "http://192.168.191.10:9098/querybook/"
+                fetch(str, {
+                    method: "POST",
+                    body: JSON.stringify(Body)
+                })
+                    .then(res => res.json())
+                    .catch(error => console.error('Error:', error))
+                    .then(response => setCars(response));
+            }
+		}
+		fetchData();
+	}
+
+
 
 	return (
 		<div className='grid-container'>
 			<div className='header'>
 				<div className='header-container'>
-					<div className='header-title'>台南市警察局 科技執法管理系統</div>
-					<div className='header-logout'>登出</div>
+
+					<div className='header-title' ><img width={65} src='./image/Taiwan_Police_Logo.png' onClick={() => navigate("/")} />台南市警察局 科技執法管理系統
+
+					</div>
+					<div className='header-logout'>{/*登出*/}
+
+					</div>
+
+					<div width={500} >
+						<select id="type_selector"
+							//onClick={() => navigate("/")}
+							onChange={(val) => handle_type_selector(val.target.value)}>
+
+							<option value="99">ALL</option>
+							<option value="1">1.違規紅燈直行、右轉及左轉偵測</option>
+							<option value="2">2.不依行向專用車道行駛偵測</option>
+							<option value="3">3.車行駛於禁行機慢車道偵測</option>
+							<option value="4">4.機慢車停等區車輛違規停放偵測</option>
+							<option value="5">5.未保持路口淨空違規偵測</option>
+							<option value="6">6.跨越禁止變換車道線偵測</option>
+							<option value="7">7.車輛未禮讓行人偵測</option>
+							<option value="8">8.違規(臨時)停車偵測</option>
+						</select>
+						<button className="btn btn-secondary" style={{ margin: '2px' }} onClick={() => navigate("/search")}>違規查詢</button>
+						<button className="btn btn-secondary" style={{ margin: '2px' }} onClick={() => navigate("/exceltable")}>統計報表</button>
+					</div>
+
+
 				</div>
+
 			</div>
 			<div className='menu'>
-				<ul className='nav nav-pills flex-column'>
-					<li className="nav-item">
-						<a className="nav-link tab-header" data-bs-toggle="collapse" href="#tab-1">
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-exclamation-triangle tab-icon" viewBox="0 0 16 16">
-								<path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
-								<path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z" />
-							</svg>
-							未審查案件
-						</a>
-						<div className="collapse" id="tab-1">
-							<ul className="nav flex-column tab-content">
-								<li className="nav-item">
-									<a className="nav-link tab-link" href="/" >測試一</a>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<li className="nav-item">
-						<a className="nav-link tab-header" href="/tableapp">
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-exclamation-triangle tab-icon" viewBox="0 0 16 16">
-								<path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
-								<path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z" />
-							</svg>
-							違規案件查詢
-						</a>
-					</li>
-					<li className="nav-item">
-						<a className="nav-link tab-header" data-bs-toggle="collapse" href="#tab-2">
-							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-exclamation-triangle tab-icon" viewBox="0 0 16 16">
-								<path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
-								<path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z" />
-							</svg>
-							統計報表
-						</a>
-					</li>
-				</ul>
+				{/***header***/}
+
 			</div>
 			<div className='main'>
+
 				<carContext.Provider value={{ cars, setCars }}>
 					<Routes>
-						{/* <Route path="/" element={<LoadJson />} /> */}
-						<Route path="/login" element={<Login />} />
-						<Route path="/excel" element={<Excel />} />
-						<Route path="/showalljson" element={<ShowAllJson />} />
-						<Route path="/tableapp" element={<TableApp />} />
-						<Route path="/search" element={<Search />} />
-						<Route path="/test" element={<Test />} />
 						<Route path="/" element={<LoadJson />} />
-
+						<Route path="/search" element={<Search />} />
+						<Route path="/exceltable" element={<ExcelTable />} />
+						<Route path="/excelcar" element={<ExcelCar />} />
+						<Route path="/exceltype" element={<Excel_Type />} />
+						<Route path="/test" element={<Test />} />
 					</Routes>
+
 				</carContext.Provider>
 			</div>
 		</div>
-		// <Router>
-
-		// 	{<nav>
-		// 		<Sidebar />
-		// 	</nav>
-		// 	}
-		// 	<carContext.Provider value={{ cars, setCars }}>
-		// 		<Routes>
-		// 			<Route path="/" element={<LoadJson />} />
-		// 			<Route path="/login" element={<Login />} />
-		// 			<Route path="/body" element={<Body />} />
-		// 			<Route path="/excel" element={<Excel />} />
-		// 			<Route path="/showalljson" element={<ShowAllJson />} />
-		// 			<Route path="/tableapp" element={<TableApp />} />
-		// 			<Route path="/search" element={<Search />} />
-		// 			<Route path="/searchtable" element={<SearchTable />} />
-		// 			<Route path="/test2" element={<Test2 />} />
-		// 		</Routes>
-		// 	</carContext.Provider>
-		// 	<hr></hr>
-
-
-		// </Router>
 	)
 
 }

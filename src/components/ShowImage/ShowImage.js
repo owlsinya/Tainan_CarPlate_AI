@@ -1,52 +1,34 @@
 import React, { useState } from 'react'
 import ShowLargeImage from '../ShowLargeImage/ShowLargeImage'
 
-
-
-export default function ShowImage(props) {
+export default function ShowImage({props}) {
 
     const [showImg, setShowImg] = useState(false)
 
-    const { car } = props
+    //console.log('props=')
+    //console.log(props)
 
-    const imagesrc = () => {
-        const imagesrc = './image/' + car.ImgName4 + '.jpg'
+    //const { props_imagesrc } = props
+    //console.log('props_imagesrc=')
+    //console.log(props_imagesrc)
+    //const { car } = props
+    
+
+    const imageSrc = () => {
+        const imagesrc = '/image/'+props
         return imagesrc
     }
-
+    let img = imageSrc()
     return (
         <div>
             <img
-                src={imagesrc()}
+                src={img}
                 alt=""
-                width='50%'
+                width='80%'
                 onClick={() => {
                     setShowImg(true);
                 }} />
-            {showImg && <ShowLargeImage car={car} setShowImg={setShowImg} />}
+            {showImg && <ShowLargeImage setShowImg={setShowImg} img={img}/>}
         </div>
     )
 }
-/**
- * 
- * 
-
-    function formatImageUrl(url) {
-        const width = '100'
-        const height = '100'
-        return url.replace('{width}', width).replace('{height}', height)
-    }
-
-     return (
-        <div>
-            <img
-                src={formatImageUrl(car.ImgName)}
-                alt=""
-                onClick={() => {
-                    setShowImg(true);
-                }} />
-            {showImg && <ShowLargeImage car={car} setShowImg={setShowImg} />}
-        </div>
-    )
-}
- */

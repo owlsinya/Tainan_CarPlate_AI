@@ -1,204 +1,84 @@
-<<<<<<< HEAD
-/*
-.modalContainer {
-  height:275px;  
+ul {
+  /* 取消ul預設的內縮及樣式 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.modalContainer > img:hover {
-  width: 100vw;
-  height: 100vh;
+ul.drop-down-menu {
+  border: #ccc 1px solid;
+  display: inline-block;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
 }
-*/
 
-/*****************************************************************/
-h2{
-    font-size: 20px;
-  }
-  body{
-    margin: 0;
-    padding: 0;
-  }
-  p{
-    margin: 8px;
-    padding: 4px;
-    font-size: 1em;
-  }
-  /****************************************************/
-  #image{
-    position: relative;
-    margin: 1px;
-    width:32vw;
-    height:auto;
-  }
-  #video{
-  width:100%;
-  height:auto;
-  object-fit:fill;
-  }
-  /****************************************************/
-  
-  ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-around;  /*平均分配寬度*/
-  }
-  ul.drop-down-menu {
-    border: #ccc 1px solid;
-    display: inline-block;
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 13px;
-  }
-  
-  ul.drop-down-menu li {
-    position: relative;
-    white-space: nowrap;    /*li不分行*/
-    border-right: #ccc 1px solid;
-  }
-  
-  ul.drop-down-menu > li:last-child {
-    border-right: none;
-  }
-  
-  ul.drop-down-menu > li {
-    float: left; /* 只有第一層是靠左對齊*/
-  }
-  
-  ul.drop-down-menu a {
-    color: #333;
-    display: block;
-    padding: 0 30px;
-    text-decoration: none;
-    line-height: 40px;
-  
-  }
-  ul.drop-down-menu a:hover { /*主選單按鈕變色*/
-    background-color: #ef5c28;
-    color: #fff;
-  }
-  ul.drop-down-menu li:hover > a { /*次選單按鈕變色*/
-    background-color: #ef5c28;
-    color: #fff;
-  }
-  ul.drop-down-menu ul {
-    border: #ccc 1px solid;
-    position: absolute;
-    z-index: 99;
-    left: -1px;
-    top: 100%;
-   min-width: 130px;
-  }
-  ul.drop-down-menu ul li:last-child {
-    border-bottom: none;
-  }
-  ul.drop-down-menu ul { /*隱藏次選單*/
-    display: none;
-  }
-  
-  ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
-    display: block;
-  }
-  
-  /*****************************************************/
-  ul > li{
-    display: block;
-    padding: 4px 8px;
-  }
-  #container{
-    display: grid;
-    width: fit-content;       
-    height: fit-content;        
-    background-image: url("https://i.pinimg.com/564x/83/11/69/831169399cb70375d7ea45ccb64be5d5.jpg");
-    background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: cover;
-    background-position: center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    row-gap: 10px;
-    column-gap: 10px;
-    grid-template-areas: 
-      "header header header header header header"
-      "menu menu content content content content "
-      "menu menu content content content content "
-      "menu menu content content content content "
-      "menu menu content content content content "
-      "menu menu content content content content ";
-  }
-  .header{
-    grid-area: header;
-    position: fixed;
-      left:0;
-      right:0;
-      top:0;
-      z-index: 99;
-  }
-  .menu{
-    grid-area: menu;
-    position: relative;
-    z-index: 2;
-  }
-  .content{
-    grid-area: content;
-    position: relative;
-    z-index: 2;
-  }
-
-
-
-
-
-
-  
-
-  .b-example-divider {
-    height: 3rem;
-    background-color: rgba(0, 0, 0, .1);
-    border: solid rgba(0, 0, 0, .15);
-    border-width: 1px 0;
-    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-  }
-  
-  .form-control-dark {
-    color: #fff;
-    background-color: var(--bs-dark);
-    border-color: var(--bs-gray);
-  }
-  .form-control-dark:focus {
-    color: #fff;
-    background-color: var(--bs-dark);
-    border-color: #fff;
-    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
-  }
-  
-  .bi {
-    vertical-align: -.125em;
-    fill: currentColor;
-  }
-  
-  .text-small {
-    font-size: 85%;
-  }
-  
-  .dropdown-toggle {
-    outline: 0;
-  }
-  
-=======
-.container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196F3;
-  padding: 10px;
+ul.drop-down-menu li {
+  position: relative;
+  white-space: nowrap;
+  border-right: #ccc 1px solid;
 }
-.item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+
+ul.drop-down-menu>li:last-child {
+  border-right: none;
 }
->>>>>>> c46b04543a56bb03b3878d07dc599737822afcd7
+
+ul.drop-down-menu>li {
+  float: left;
+  /* 只有第一層是靠左對齊*/
+}
+
+ul.drop-down-menu a {
+  background-color: #fff;
+  color: #333;
+  display: block;
+  padding: 0 30px;
+  text-decoration: none;
+  line-height: 40px;
+}
+
+ul.drop-down-menu a:hover {
+  /* 滑鼠滑入按鈕變色*/
+  background-color: #28e8ef;
+  color: #fff;
+}
+
+ul.drop-down-menu li:hover>a {
+  /* 滑鼠移入次選單上層按鈕保持變色*/
+  background-color: #28e8ef;
+  color: #fff;
+}
+
+ul.drop-down-menu ul {
+  border: #ccc 1px solid;
+  position: absolute;
+  z-index: 99;
+  left: -1px;
+  top: 100%;
+  min-width: 180px;
+}
+
+ul.drop-down-menu ul li {
+  border-bottom: #ccc 1px solid;
+}
+
+ul.drop-down-menu ul li:last-child {
+  border-bottom: none;
+}
+
+ul.drop-down-menu ul ul {
+  /*第三層以後的選單出現位置與第二層不同*/
+  z-index: 999;
+  top: 10px;
+  left: 90%;
+}
+
+ul.drop-down-menu ul {
+  /*隱藏次選單*/
+  display: none;
+}
+
+ul.drop-down-menu li:hover>ul {
+  /* 滑鼠滑入展開次選單*/
+  display: block;
+
+}

@@ -32,19 +32,15 @@ export default function ShowVideo(props) {
   }
 
   const videosrc = () => {
-    const videosrc = './video/' + car.VideoName + '.mp4'
+    const videosrc = './video/' + car.VideoName
     return videosrc
   }
+  let video_src = videosrc()
 
 
   return <div>
 
-    <button onClick={() => {
-      show();
-    }
-    } >open </button>
-
-
+<img width={40} src='./image/1.png' onClick={() => {show();}} />
     {showVideo && (
       <div style={modalBackground}>
         <div style={modalContainer}>
@@ -53,9 +49,9 @@ export default function ShowVideo(props) {
               onClick={show}>x</button>
           </div>
 
-          <video width="750" height="500" autoPlay>
+          <video width="750" height="500" autoPlay controls>
             <source
-              src={videosrc()}
+               src={video_src}
               type="video/mp4" />
           </video>
 
@@ -64,5 +60,5 @@ export default function ShowVideo(props) {
     )}
   </div>;
 }
-//<source src='./video/'{car.VideoName} type="video/mp4" />
+
 
