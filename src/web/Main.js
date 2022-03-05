@@ -9,7 +9,7 @@ import Test from '../components/Test/Test';
 import ExcelCar from '../components/Excel_Car/Excel_Car';
 import Excel_Type from '../components/Excel_Type/Excel_Type';
 // import { useNavigate } from "react-router-dom";
-import { AuthProvider } from '../auth/reducer.js';
+import { AuthProvider, RequireAuth } from '../auth/reducer.js';
 import Login from './Login';
 
 export default function Main() {
@@ -80,7 +80,11 @@ export default function Main() {
       <AuthProvider>
         <carContext.Provider value={{ cars, setCars }}>
           <Routes>
-            <Route path="/" element={<LoadJson />} />
+            <Route path="/" element={
+              <RequireAuth>
+                <LoadJson />
+              </RequireAuth>
+            } />
             <Route path="/search" element={<Search />} />
             <Route path="/exceltable" element={<ExcelTable />} />
             <Route path="/excelcar" element={<ExcelCar />} />

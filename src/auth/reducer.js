@@ -1,6 +1,7 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useContext, } from "react";
 import { setStoreUser, setStoreToken, clearStore, getAuth, setAuth, getStoreUser, getStoreToken } from './localstore';
 import React from 'react';
+import { Navigate, useLocation  } from "react-router-dom";
 
 // **global variable
 // 全域變數: maintain一份variables (認證, 使用者, token 等狀態), 讓所有子組件可以使用
@@ -71,4 +72,19 @@ const AuthProvider = ({ children }) => {
 export {
     AuthContext,
     AuthProvider,
+}
+
+export function RequireAuth({ children }) {
+  let auth = useContext(AuthContext);
+  let location = useLocation();
+
+  if (!auth.state.isAuthenticated) {
+    // Redirect them to the /login page, but save the current location they were
+    // trying to go to when they were redirected. This allows us to send them
+    // along to that page after they login, which is a nicer user experience
+    // than dropping them off on the home page.
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return children;
 }

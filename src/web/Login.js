@@ -8,6 +8,7 @@ import { loginApi } from "../auth/request"
 import { AuthContext } from '../auth/reducer'
 import './Login.css';
 // import MainPage from "../MainPage"
+import { useNavigate, useLocation } from "react-router-dom";
 
 // 驗證輸入欄位
 const Login = (props) => {
@@ -18,6 +19,8 @@ const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // 使用者帳號輸入
   const onChangeUsername = (e) => {
@@ -60,6 +63,9 @@ const Login = (props) => {
           })
           // 登入成功, 跳轉 main page
           console.log("跳轉 main page")
+          
+          const from = location.state?.from?.pathname || "/";
+          navigate(from , { replace: true });
           // props.history.push("/main");
         }
       }).catch(err => {
@@ -73,13 +79,13 @@ const Login = (props) => {
     }
   };
 
-  useEffect(() => {
-    console.log("hello Login~~~~")
+  // useEffect(() => {
+    // console.log("hello Login~~~~")
     // if (state.isAuthenticated) {
     //     props.history.push("/main")
     //     console.log("Login => main page")
     // }
-  }, [])
+  // }, [])
 
   return (
     // 從 bezkoder(github) copy來的bootstrap樣式
@@ -130,6 +136,5 @@ const Login = (props) => {
     </div>
   )
 }
-// props.history.push("/main")
 
 export default Login
