@@ -75,6 +75,11 @@
   font-weight: bold;
   font-size: 1.4rem;
   color:white;
+  text-decoration: none;
+}
+
+.header-logout:hover{
+  color: white;
 }
 
 .header-title{
