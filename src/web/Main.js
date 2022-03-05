@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { carContext } from '../createContext.js';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Search from '../components/Search/Search';
 import ExcelTable from '../components/ExcelTable/ExcelTable'
 import LoadJson from '../components/LoadJson/LoadJson';
 import Test from '../components/Test/Test';
 import ExcelCar from '../components/Excel_Car/Excel_Car';
 import Excel_Type from '../components/Excel_Type/Excel_Type';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { AuthProvider } from '../auth/reducer.js';
 
 export default function Main() {
   let navigate = useNavigate();
@@ -74,18 +76,20 @@ export default function Main() {
         <button className="btn btn-secondary" style={{ margin: '2px' }} onClick={() => navigate("/search")}>違規查詢</button>
         <button className="btn btn-secondary" style={{ margin: '2px' }} onClick={() => navigate("/exceltable")}>統計報表</button>
       </div>
+      <AuthProvider>
+        <carContext.Provider value={{ cars, setCars }}>
+          <Routes>
+            <Route path="/" element={<LoadJson />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="/exceltable" element={<ExcelTable />} />
+            <Route path="/excelcar" element={<ExcelCar />} />
+            <Route path="/exceltype" element={<Excel_Type />} />
+            <Route path="/test" element={<Test />} />
+          </Routes>
 
-      <carContext.Provider value={{ cars, setCars }}>
-        <Routes>
-          <Route path="/" element={<LoadJson />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/exceltable" element={<ExcelTable />} />
-          <Route path="/excelcar" element={<ExcelCar />} />
-          <Route path="/exceltype" element={<Excel_Type />} />
-          <Route path="/test" element={<Test />} />
-        </Routes>
+        </carContext.Provider>
+      </AuthProvider>
 
-      </carContext.Provider>
     </>
   );
 }
