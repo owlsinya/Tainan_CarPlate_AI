@@ -10,6 +10,7 @@ import ExcelCar from '../components/Excel_Car/Excel_Car';
 import Excel_Type from '../components/Excel_Type/Excel_Type';
 // import { useNavigate } from "react-router-dom";
 import { AuthProvider } from '../auth/reducer.js';
+import Login from './Login';
 
 export default function Main() {
   let navigate = useNavigate();
@@ -85,6 +86,7 @@ export default function Main() {
             <Route path="/excelcar" element={<ExcelCar />} />
             <Route path="/exceltype" element={<Excel_Type />} />
             <Route path="/test" element={<Test />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
 
         </carContext.Provider>
