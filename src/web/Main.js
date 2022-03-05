@@ -11,6 +11,7 @@ import Excel_Type from '../components/Excel_Type/Excel_Type';
 // import { useNavigate } from "react-router-dom";
 import { RequireAuth, AuthContext } from '../auth/reducer.js';
 import Login from './Login';
+import { serverUrl } from '../auth/cfg.js';
 
 export default function Main() {
   let navigate = useNavigate();
@@ -43,7 +44,8 @@ export default function Main() {
       console.log(data)
       query(data)
       function query(Body) {
-        let str = "http://192.168.191.10:9098/querybook/"
+        // let str = "http://192.168.191.10:9098/querybook/"
+        const str = serverUrl + "/querybook/"
         fetch(str, {
           method: "POST",
           body: JSON.stringify(Body)

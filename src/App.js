@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import Main from './web/Main.js';
 import { AuthContext } from './auth/reducer.js';
+import { serverUrl } from './auth/cfg';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
     })
   }
 
+  // test get server url
+  console.log(serverUrl);
 
   return (
     <div className='grid-container'>

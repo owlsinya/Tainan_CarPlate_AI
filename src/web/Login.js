@@ -131,7 +131,7 @@ const Login = (props) => {
           </div>
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
-        {console.log("return Login page")}
+        {/* {console.log("return Login page")} */}
       </div>
     </div>
   )

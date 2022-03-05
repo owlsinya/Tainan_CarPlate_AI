@@ -5,6 +5,7 @@ import './Excel_Type.css'
 import Excel from '../Excel/Excel';
 import DatePicker from 'react-datepicker';
 import { DEVICE_SIZES } from 'react-bootstrap/esm/createUtilityClasses';
+import { serverUrl } from '../../auth/cfg';
 
 
 export default function Excel_Type() {
@@ -62,7 +63,8 @@ export default function Excel_Type() {
             }
             query(Body)
             function query(Body) {
-                let str = "http://192.168.191.10:9098/querybook/"
+                // let str = "http://192.168.191.10:9098/querybook/"
+                const str = serverUrl + "/querybook/";
                 fetch(str, {
                     method: "POST",
                     body: JSON.stringify(Body)

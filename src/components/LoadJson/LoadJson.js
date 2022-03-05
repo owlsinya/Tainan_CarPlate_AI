@@ -6,6 +6,7 @@ import EdittableRow from '../EdittableRow/EdittableRow';
 
 
 import FileSaver from 'file-saver'
+import { serverUrl } from '../../auth/cfg';
 
 
 export default function LoadJson() {
@@ -291,7 +292,8 @@ console.log(cars)
 
 	//function savebackDB(data,id) {
 	function savebackDB(data,id) {
-		let str='http://192.168.191.10:9098/updatebook/'+id
+		// let str='http://192.168.191.10:9098/updatebook/'+id
+    const str = serverUrl + '/updatebook/' + id;
 		//let str='http://192.168.191.10:9098/updatebook/'+id.toString()
 		/*
 		var data = {
@@ -467,8 +469,8 @@ console.log(cars)
 		if (yes) {
 			const newCars = [...cars]
 			const index = cars.findIndex((car) => car.ID === carNumber)
-			let url = 'http://192.168.191.10:9098/deletebook/' + carNumber.toString()	//將int轉string
-
+			// let url = 'http://192.168.191.10:9098/deletebook/' + carNumber.toString()	//將int轉string
+      const url = serverUrl + '/deletebook/' + carNumber.toString()
 			newCars.splice(index, 1)
 			//////**************************/////
 			//將newCars[index]這car.ID從資料庫刪掉
